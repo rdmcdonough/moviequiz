@@ -10,4 +10,4 @@ Screenshot:
 ![picture](Assets/04-webapis-homework-demo.png)
 
 Link to deployed application:
-https://rdmcdonough.github.io/moviequiz/Develop/index.html
+ https://rdmcdonough.github.io/moviequiz/Develop/index.html
