@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Movie Quiz</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="highscores" href="highscores.html" />
+    <link rel="highscoreslink" href="highscores.html" />
   </head>
   <body>
     <div class="wrapper">
@@ -14,18 +14,19 @@
         <h1>Movie Quiz</h1>
       </header>
       <div>
-        <a href="highscores.html">High Scores</a> 
+        <button id="highscoreslink" class="menubtn"> <a href="highscores.html">High Scores</a> </button>
+        <button id="playAgainLink" class="menubtn"> <a id="playAgain" href="index.html">Play Again</a> </button>
       </div>
       <div class="card">
         <div class="card-header">
-          <h2>Movie Quiz</h2>
+          <h2>Test Your Set Lighting Technician Knowledge</h2>
           <p id = "timer">Time Remaining</p>
         </div>
         <div class="card-body">
           <textarea
             readonly
             id="question"
-            placeholder="You have 60 seconds to take this quiz. The timer starts when you click the start buttom. This is where the questions appear. Click on the red buttom you think is the correct answer."
+            placeholder="You have 60 seconds to take this quiz. The timer starts when you click the start button. This is where the questions appear. Click on the red button you think is the correct answer."
             aria-label="Generated Question"
           ></textarea>
         </div>
