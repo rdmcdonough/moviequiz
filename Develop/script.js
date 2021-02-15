@@ -79,7 +79,7 @@ function startTimer() {
 
     if(timeRemaining === 0) {
       clearInterval(timerInterval);
-      // endQuiz();
+      endQuiz();
     }
 
   }, 1000);
@@ -198,6 +198,15 @@ function generateNextAnswers () {
         console.log(remaining8FlaseAnswers2);
         console.log("These are the remaining8 falseanswers3 ");
         console.log(remaining8FalseAnswers3);
+}
+
+function endQuiz () {
+  document.getElementById("Abtn").style.display = 'none';
+  document.getElementById("Bbtn").style.display = 'none';
+  document.getElementById("Cbtn").style.display = 'none';
+  document.getElementById("Dbtn").style.display = 'none';
+  timerSpan.textContent = "Your Time is Up - The Quiz is Over";
+  questionSpan.textContent = "Your results show here";
 }
 
 startBtn.addEventListener("click", function() {
