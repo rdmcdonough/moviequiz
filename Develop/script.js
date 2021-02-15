@@ -212,6 +212,10 @@ function endQuiz () {
   document.getElementById("highscorebox").style.display = 'block';
 }
 
+// if (remainingCorrectAnswers.length === 0) {
+//   endQuiz ();
+// }
+
 startBtn.addEventListener("click", function() {
   console.log("hello");
   console.log(originalTriviaQuestions.length);
