@@ -1,6 +1,7 @@
 // Assignment Code
 var startBtn = document.querySelector("#start");
 //^^created for event listener
+// var nextBtn = document.querySelector("#start");
 
 var questionSpan = document.querySelector("#question");
 //created for using textContent downline to fill in the user generated question
@@ -28,12 +29,13 @@ var questionGenerated = "";
 var originalTriviaQuestions = ["What is a 'baby'?", "What is a 'blonde'?", "what is a 'midget'?", "what does the term 'strike' mean?", "What does the term 'kill' mean?", "What is the role of the 'bestboy'?", "What is a 'gaffer'?", "What is a pancake?", "what is a 'roadrunner'?"];
 //must create array the length of the user slected "what length do you want your password?" promt
 // var finalArr = [];
-
+var remainingTriviaQuestions = [];
 
 // Write password to the #password input
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 function writeQuestion() {
  questionGenerated = ""
+//  remainingTriviaQuestions = ""
 
   console.log("These are my trivia questions");
   console.log(originalTriviaQuestions);
@@ -48,12 +50,17 @@ function writeQuestion() {
     console.log("This is the question at that index");
     console.log(originalTriviaQuestions[triviaQuestionRandomIndex]);
     questionGenerated += originalTriviaQuestions[triviaQuestionRandomIndex];
+    
     // remainingTriviaQuestions = (originalTriviaQuestion.splice(triviaQuestionRandomIndex, 1);
-    // console.log(originalTriviaQuestions.splice(triviaQuestionRandomIndex, 1));
-    remainingTriviaQuestions = originalTriviaQuestions.splice((triviaQuestionRandomIndex), (1));
-    console.log("These are the remaining trivia questions");
-    console.log(remainingTriviaQuestions);
-  
+    // console.log(originalTriviaQuestions.splice(0, 1));
+    // remainingTriviaQuestions = originalTriviaQuestions.splice((triviaQuestionRandomIndex), (1));
+    // console.log("These are the remaining trivia questions");
+    // console.log(remainingTriviaQuestions);
+  for(var i = 0; i < originalTriviaQuestions.length; i++)
+    if (i != triviaQuestionRandomIndex) {
+      remainingTriviaQuestions.push(originalTriviaQuestions[i])
+    }
+    console.log(remainingTriviaQuestions)
   // } 
   // now that finalArr is filled with random content of type chosen by user the length of user choice the password has been generated as finalArr which is Array format
   //this finalArr has to be transformed into a string in order to be used as password
@@ -61,11 +68,19 @@ function writeQuestion() {
   // passwordGenerated.push(finalArr.join(""));
   console.log("This is the generated question");
   console.log(questionGenerated);
+    // startBtn.textContent = "Next";
+  
   
   // // triviaQuestions.pop()
   // console.log("These are the remaining trivia questions");
   // console.log(remainingTriviaQuestions);
 }
+
+function hideStart () {
+  document.getElementById("start").style.display = 'none';
+  // startBtn.style.display = 'none';
+}
+
 
 function showQuestionGenerated () {
     questionSpan.textContent = (questionGenerated);
@@ -75,7 +90,7 @@ startBtn.addEventListener("click", function() {
   console.log("hello");
   writeQuestion();
   showQuestionGenerated();
- 
+  hideStart ();
   // remainingTriviaQuestions = (originalTriviaQuestions.splice(triviaQuestionRandomIndex, 1));
   // console.log("These are the remaining trivia questions");
   // console.log(remainingTriviaQuestions);
