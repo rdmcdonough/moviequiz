@@ -6,6 +6,7 @@ var bBtnSpan = document.querySelector("#Bbtn");
 var cBtnSpan = document.querySelector("#Cbtn");
 var dBtnSpan = document.querySelector("#Dbtn");
 var timerSpan = document.querySelector("#timer");
+var highscoreSpan = document.querySelector("#highscore");
 
 var timeRemaining = 60;
 
@@ -39,6 +40,7 @@ document.getElementById("Bbtn").style.display = 'none';
 document.getElementById("Cbtn").style.display = 'none';
 document.getElementById("Dbtn").style.display = 'none';
 document.getElementById("timer").style.display = 'none';
+document.getElementById("highscorebox").style.display = 'none';
 
 function writeQuestion() {
  questionGenerated = ""
@@ -207,6 +209,7 @@ function endQuiz () {
   document.getElementById("Dbtn").style.display = 'none';
   timerSpan.textContent = "Your Time is Up - The Quiz is Over";
   questionSpan.textContent = "Your results show here";
+  document.getElementById("highscorebox").style.display = 'block';
 }
 
 startBtn.addEventListener("click", function() {
